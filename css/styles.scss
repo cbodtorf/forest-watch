@@ -1,0 +1,27 @@
+/******************************
+* STYLES
+*******************************/
+
+*{
+  font-family: 'Aldrich', sans-serif;
+}
+.main-container {
+  background-color: white;
+  h1 {
+    margin-top: 0;
+  }
+}
+.views {
+  padding-top: 40px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+@import 'nav';
+@import 'login';
+@import 'jobs';
+@import 'news';
+@import 'about';
+@import 'job-details';
+@import 'news-article';

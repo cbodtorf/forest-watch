@@ -1,0 +1,76 @@
+
+[
+
+  {
+    "title": "Croc Show",
+    "description": "Learn how to wrangle crocs so they don't eat the neighborhood kids",
+    "hrs": 10,
+    "date": {
+      "month": "May",
+      "day": 21
+    },
+    "volsNeeded": 10,
+    "volunteers": ["crocguy62", "ron"]
+  },
+
+  {
+    "title": "Dancing with the Wolves",
+    "description": "Wildlife preservation at its finest. Spend time in the thick of it, and be one with nature.",
+    "hrs": 50,
+    "date": {
+      "month": "October",
+      "day": 1
+    },
+    "volsNeeded": 4,
+    "volunteers": ["crocguy62", "manvwild74", "primates4lyfe"]
+  },
+
+  {
+    "title": "Monkying Around",
+    "description": "We need folks who can help teach Monkies how to be human and vice versa",
+    "hrs": 130,
+    "date": {
+      "month": "June",
+      "day": 22
+    },
+    "volsNeeded": 4,
+    "volunteers": ["primates4lyfe"]
+  },
+
+  {
+    "title": "Jungle Fever",
+    "description": "Help stop deforestation in our dense jungles/forests. We need patrols and rangers",
+    "hrs": 40,
+    "date": {
+      "month": "December",
+      "day": 22
+    },
+    "volsNeeded": 20,
+    "volunteers": ["primates4lyfe", "ron"]
+  },
+
+  {
+    "title": "Fire Watchers",
+    "description": "Come join the fight at the front lines. We need volunteers to man the watchtowers and keep our forests safe.",
+    "hrs": 200,
+    "date": {
+      "month": "August",
+      "day": 10
+    },
+    "volsNeeded": 3,
+    "volunteers": ["ron"]
+  },
+
+  {
+    "title": "Water Keepers",
+    "description": "Our oceans and rivers are in danger. Please come lend a hand protecting our waterways from pollution",
+    "hrs": 20,
+    "date": {
+      "month": "March",
+      "day": 18
+    },
+    "volsNeeded": 50,
+    "volunteers": ["manvwild74", "primates4lyfe"]
+  }
+
+]

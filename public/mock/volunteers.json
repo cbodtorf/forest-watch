@@ -1,0 +1,64 @@
+
+
+[
+  {
+    "username": "crocguy62",
+    "password": "stingray",
+    "info": {
+      "firstname": "Steve",
+      "lastname": "Irwin",
+      "gender": "male",
+      "age": "54",
+      "exp": {
+        "jobs": ["Croc Show", "Dancing with the Wolves"],
+        "volHrs": 500
+      }
+    }
+  },
+
+  {
+    "username": "manvwild74",
+    "password": "iwillsurvive",
+    "info": {
+      "firstname": "Bear",
+      "lastname": "Grylls",
+      "gender": "male",
+      "age": "42",
+      "exp": {
+        "jobs": ["Water Keepers", "Dancing with the Wolves"],
+        "volHrs": 150
+      }
+    }
+  },
+
+  {
+    "username": "primates4lyfe",
+    "password": "tanzania",
+    "info": {
+      "firstname": "Jane",
+      "lastname": "Goodall",
+      "gender": "female",
+      "age": "82",
+      "exp": {
+        "jobs": ["Water Keepers", "Dancing with the Wolves", "Monkying Around", "Jungle Fever"],
+        "volHrs": 1500
+      }
+    }
+  },
+
+  {
+    "username": "ron",
+    "password": "dukesilver",
+    "info": {
+      "firstname": "Ron",
+      "lastname": "Swanson",
+      "gender": "male",
+      "exp": {
+        "jobs": ["Fire Watchers", "Croc Show", "Jungle Fever"],
+        "volHrs": 2500
+      }
+    }
+  }
+
+
+]
