@@ -8,15 +8,7 @@ module.exports = function(app) {
 
   app.controller('LoginController', ['$scope', 'VolunteerService', function($scope, VolunteerService){
     $scope.username = '';
-    $scope.vol = {};
-
-    let loggedIn = function() {
-      let log = document.getElementById('log');
-      let a = document.createElement('A');
-      a.setAttribute('href', '#/logout');
-      a.innerHtml = 'Logout';
-      log.appendChild(a);
-    }
+    $scope.vol = VolunteerService.getUser();
 
     $scope.login = function() {
 
@@ -33,13 +25,11 @@ module.exports = function(app) {
               })
               $scope.username = '';
               $scope.password = '';
-              console.log('user', user[0].info)
+
               if (user.length === 1) {
                 // set user session, probs change *login* link to *logout*
 
-                $scope.vol = user[0].info;
-
-                return $scope.vol;
+                return user[0].info;
               } else {
                 // create new user
                 console.log("create new user");

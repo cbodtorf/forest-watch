@@ -21,5 +21,11 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "boom": "^3.2.2",
+    "hapi": "^13.5.0",
+    "inert": "^4.0.1",
+    "mongodb": "^2.2.1"
   }
 }

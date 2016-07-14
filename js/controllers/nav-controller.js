@@ -15,7 +15,5 @@ module.exports = function(app) {
     $scope.isCollapsed = false;
 
 
-
-
   }])
 }

@@ -24,6 +24,11 @@ let app = angular.module('ForestWatchApp', ['ngRoute'])
         controller: 'LoginController',
       })
 
+      .when('/logout',{
+        templateUrl: 'logout.html',
+        controller: 'LoginController',
+      })
+
       .when('/jobs', {
         templateUrl: 'jobs.html',
         // controller: '',
@@ -56,7 +61,7 @@ let app = angular.module('ForestWatchApp', ['ngRoute'])
   // Filters
 
   // Directives
-
+  require('./directives/job-directive')(app);
 
 
 })();

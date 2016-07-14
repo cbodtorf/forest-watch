@@ -9,15 +9,7 @@ module.exports = function(app) {
 
   app.controller('LoginController', ['$scope', 'VolunteerService', function($scope, VolunteerService){
     $scope.username = '';
-    $scope.vol = {};
-
-    let loggedIn = function() {
-      let log = document.getElementById('log');
-      let a = document.createElement('A');
-      a.setAttribute('href', '#/logout');
-      a.innerHtml = 'Logout';
-      log.appendChild(a);
-    }
+    $scope.vol = VolunteerService.getUser();
 
     $scope.login = function() {
 
@@ -34,13 +26,11 @@ module.exports = function(app) {
               })
               $scope.username = '';
               $scope.password = '';
-              console.log('user', user[0].info)
+
               if (user.length === 1) {
                 // set user session, probs change *login* link to *logout*
 
-                $scope.vol = user[0].info;
-
-                return $scope.vol;
+                return user[0].info;
               } else {
                 // create new user
                 console.log("create new user");
@@ -86,12 +76,26 @@ module.exports = function(app) {
     $scope.isCollapsed = false;
 
 
-
-
   }])
 }
 
 },{}],3:[function(require,module,exports){
+
+module.exports = function(app) {
+
+  app.directive('job', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/directives/job.html',
+      scope: {
+        job: '=info',
+      },
+      replace: true,
+    };
+  });
+};
+
+},{}],4:[function(require,module,exports){
 'use strict';
 
 /*******************************
@@ -110,6 +114,9 @@ module.exports = function(app) {
       templateUrl: 'main.html'
     }).when('/login', {
       templateUrl: 'login.html',
+      controller: 'LoginController'
+    }).when('/logout', {
+      templateUrl: 'logout.html',
       controller: 'LoginController'
     }).when('/jobs', {
       templateUrl: 'jobs.html'
@@ -133,8 +140,9 @@ module.exports = function(app) {
   // Filters
 
   // Directives
+  require('./directives/job-directive')(app);
 })();
-},{"./controllers/login-controller":1,"./controllers/nav-controller":2,"./services/jobs-service":4,"./services/volunteer-service":5}],4:[function(require,module,exports){
+},{"./controllers/login-controller":1,"./controllers/nav-controller":2,"./directives/job-directive":3,"./services/jobs-service":5,"./services/volunteer-service":6}],5:[function(require,module,exports){
 /*******************************
 * Jobs Service
 * stores Job/Event info
@@ -172,7 +180,7 @@ module.exports = function(app) {
   }])
 }
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /*******************************
 * Volunteer Service
 * stores Job/Event info
@@ -196,12 +204,12 @@ module.exports = function(app) {
               vol: userObj,
             }
           })
-
         },
 
+        //when logging in
         getVol(callback) {
           $http({
-            url: './mock/volunteers.json',
+            url: '/volunteers',
             method: 'GET',
           }).then(function(response){
 
@@ -215,14 +223,27 @@ module.exports = function(app) {
           })
         },
 
+        // return log status
         getLogStatus() {
 
           return logStatus;
         },
 
+        // current user
         getUser() {
 
           return vol;
+        },
+
+        // clear out user information and reset status
+        clearSession() {
+          user = {};
+          let log = {status: false};
+
+          angular.copy(user, vol);
+          angular.copy(log, logStatus);
+
+          $location.path('/');
         },
 
       }
@@ -233,4 +254,4 @@ module.exports = function(app) {
   }])
 }
 
-},{}]},{},[3])
+},{}]},{},[4])

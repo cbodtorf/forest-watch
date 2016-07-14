@@ -21,12 +21,12 @@ module.exports = function(app) {
               vol: userObj,
             }
           })
-
         },
 
+        //when logging in
         getVol(callback) {
           $http({
-            url: './mock/volunteers.json',
+            url: '/volunteers',
             method: 'GET',
           }).then(function(response){
 
@@ -40,14 +40,27 @@ module.exports = function(app) {
           })
         },
 
+        // return log status
         getLogStatus() {
 
           return logStatus;
         },
 
+        // current user
         getUser() {
 
           return vol;
+        },
+
+        // clear out user information and reset status
+        clearSession() {
+          user = {};
+          let log = {status: false};
+
+          angular.copy(user, vol);
+          angular.copy(log, logStatus);
+
+          $location.path('/');
         },
 
       }
